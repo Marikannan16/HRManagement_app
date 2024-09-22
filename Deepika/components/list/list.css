@@ -1,0 +1,22 @@
+.menu-popup {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 100;
+    width: 150px;
+  }
+  
+  .menu div {
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .menu div:hover {
+    background-color: #f0f0f0;
+  }
+  
