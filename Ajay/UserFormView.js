@@ -1,19 +1,23 @@
 import React from 'react';
-import { GoUpload } from 'react-icons/go'
 import { useDispatch, useSelector } from 'react-redux';
-import { setUserData, resetUserData } from '../Slices/userSclice';
+import { resetUserData } from '../Slices/userSclice';
 import { useNavigate } from 'react-router-dom';
+import { addUserToList } from '../Slices/usersListSlice';
 
 const UserFormView = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const user = useSelector((state) => state.user);
+    const userList = useSelector((state) => state.usersList);
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        dispatch(addUserToList(user));
         console.log('Submitted data:', user);
+        console.log("All Users:", userList);
         alert('Form Submitted');
-        navigate('/first-form')
+        alert('User Added!');
+        navigate('/thrid-form')
     };
 
     const handleCancel = (e) => {
@@ -23,14 +27,14 @@ const UserFormView = () => {
     };
 
     return (
-        <div className="w-screen h-screen px-10 py-5">
+        <div className=" w-screen h-screen px-10 py-5">
             <h2 className="text-xl font-semibold text-gray-800 ms-2 text-start">View User</h2>
 
             <div className="flex flex-col justify-center items-center pb-8">
                 <label htmlFor="profilePhoto" className="relative cursor-pointer">
                     <div className="w-40 h-40 bg-gray-100 shadow-md rounded-full overflow-hidden flex items-center justify-center">
                         <span className="text-gray-500 text-6xl ">
-                            <img src={user.profilePhoto} alt="Profile" className="w-full h-full object-cover" />
+                            <img src={user.profilePhoto} alt="Profile" className="w-full h-full object-contain" />
                         </span>
                     </div>
                     <input
