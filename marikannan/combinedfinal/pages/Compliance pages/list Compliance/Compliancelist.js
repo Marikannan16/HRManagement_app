@@ -75,7 +75,7 @@ const Compliancelist = () => {
 
 
     const handleGoToCompliance = () => {
-        navigate('/compliance');  // Navigate to compliance page
+        navigate('/home/compliance');  // Navigate to compliance page
     };
     const { complianceList = [], filters = {}, pagination = {} } = useSelector((state) => state.compliance);
 

@@ -24,7 +24,7 @@ const ComplianceForm = () => {
       ...prevState,
       [name]: value,
     }));
-    // dispatch(setComplianceField({ field: name, value }));
+    dispatch(setComplianceField({ field: name, value }));
   };
 
   const handleFileUpload = (e) => {
@@ -35,13 +35,13 @@ const ComplianceForm = () => {
         uploadDocument: URL.createObjectURL(file),
       }));
     }
-    // dispatch(setComplianceField({ field: 'document', value: file }));
+    dispatch(setComplianceField({ field: 'document', value: file }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(setComplianceField(formData));
-    navigate('/viewcompliance')
+    navigate('/home/viewcompliance')
     // alert('Form Submitted');
     setFormState({
       activity: '', typeOfAct: '',
@@ -58,13 +58,14 @@ const ComplianceForm = () => {
       remarks: '', customization: '', dueDate: '', Section: '',
       state: '', applicability: '', priorityType: '', frequencyofcompliance: '', uploadDocument: null,
     })
+    navigate('/home/compliancelist')
   };
   const handleBackClick = () => {
     // Optional: Dispatch action to update state if necessary
     dispatch({ type: 'SET_CURRENT_VIEW', payload: 'list' });
 
     // Navigate back to the compliance list
-    navigate('/compliancelist');
+    navigate('/home/compliancelist');
   };
   return (
     <div className="w-screen h-screen px-10 py-5">

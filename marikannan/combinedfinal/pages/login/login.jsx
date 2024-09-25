@@ -9,9 +9,11 @@ import { VscEyeClosed } from "react-icons/vsc";
 import { CiLock } from "react-icons/ci";
 import { AiOutlineMail } from "react-icons/ai";
 import ReCAPTCHA from 'react-google-recaptcha';
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const dispatch = useDispatch();
+  const navigate=useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showpassword, setShowPassword] = useState(true);
@@ -35,12 +37,11 @@ const Login = () => {
       return;
     }
     dispatch(login({ email, password }));
-
+    navigate('/home')
   };
 
   const visiblePassword = (e) => {
     e.preventDefault();
-
     setShowPassword(!showpassword);
   };
   return (

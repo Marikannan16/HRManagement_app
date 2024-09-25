@@ -53,7 +53,7 @@ const SidenavBar = ({ isOpen, closeSidebar }) => {
                     </div>
 
                     {isComplianceOpen && (
-                        <ul className="mt-2 space-y-2"><Link to="/compliance">
+                        <ul className="mt-2 space-y-2"><Link to="/home/compliancelist">
                             <li className="pl-12 py-1 hover:bg-yellow-500 hover:border-black hover:border-e-4">
                                 Compliance
                             </li></Link>

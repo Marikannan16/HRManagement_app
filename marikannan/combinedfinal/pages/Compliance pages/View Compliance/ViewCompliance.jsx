@@ -63,11 +63,11 @@ const ViewCompliance = () => {
 
   const handleBackClick = () => {
     dispatch({ type: 'SET_CURRENT_VIEW', payload: 'list' });
-    navigate('/');
+    navigate('/home/compliancelist');
   };
 
   const handleEditClick = () => {
-    navigate(`/editcompliance/${formData.sno}`);
+    navigate(`/home/editcompliance/${formData.sno}`);
   };
 
   return (

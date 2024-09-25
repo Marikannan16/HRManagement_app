@@ -47,17 +47,17 @@ const EditCompliance = () => {
   const handleCancel = () => {
     dispatch(resetForm());
     setFormData(initialData);
-    navigate('/compliancelist')
+    navigate('/home/compliancelist')
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/compliancelist')
+    navigate('/home/compliancelist')
     // console.log('Updated Compliance Data:', formData);
   };
  const handleBackClick = () => {
     dispatch({ type: 'SET_CURRENT_VIEW', payload: 'list' });
-     navigate('/compliancelist');
+     navigate('/home/compliancelist');
   };
   return (
     <div className="w-screen h-screen px-10 py-5">

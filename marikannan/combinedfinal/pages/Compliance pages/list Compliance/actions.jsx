@@ -30,13 +30,13 @@ const ActionCell = ({ row }) => {
                     <div className="menu">
                         <div>
                             {/* Pass the row.sno dynamically in the Link */}
-                            <Link to={`/editcompliance/${row.sno}`} onClick={() => handleOptionClick('Edit')}>
+                            <Link to={`editcompliance/${row.sno}`} onClick={() => handleOptionClick('Edit')}>
                                 <FontAwesomeIcon icon={faEdit} /> Edit
                             </Link>
                         </div>
                         <div>
                             {/* Pass the row.sno dynamically in the Link */}
-                            <Link to={`/viewcompliance/${row.sno}`} onClick={() => handleOptionClick('Details')}>
+                            <Link to={`viewcompliance/${row.sno}`} onClick={() => handleOptionClick('Details')}>
                                 <FontAwesomeIcon icon={faEye} /> View
                             </Link>
                         </div>
