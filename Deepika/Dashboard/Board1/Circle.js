@@ -3,51 +3,52 @@ import CircularProgressBar from './CircularProgressBar';
 
 const Circle = ({ complied, notComplied, partiallyComplied, overdue }) => {
     return (
-    <div className='border mt-5 pe-4 ps-4 pb-4 rounded'>
+      <div className="border mt-5 px-4 pb-4 rounded lg:px-8 md:px-6 sm:px-4">
       <h6 className="mb-4 mt-4">Status of Activities</h6>
-      <div className="flex justify-between items-center -space-x-5">
-        <div>
-          <div className='ps-12 mt-3'>
-            <label>Complied</label>
+      <div className="flex flex-wrap justify-between items-center space-y-5 lg:space-y-0">
+          <div className="w-full lg:w-auto flex-1 text-center">
+              <div className='mt-3'>
+                  <label>Complied</label>
+              </div>
+              <CircularProgressBar
+                  value={complied}
+                  label="Complied"
+                  color="#28a745"
+              />
           </div>
-          <CircularProgressBar
-            value={complied}
-            label="Complied"
-            color="#28a745"
-          />
-        </div>
-        <div>
-          <div className='ps-12 mt-3'>
-            <label>Not Complied</label>
+          <div className="w-full lg:w-auto flex-1 text-center">
+              <div className='mt-3'>
+                  <label>Not Complied</label>
+              </div>
+              <CircularProgressBar
+                  value={notComplied}
+                  label="Not Complied"
+                  color="#dc3545"
+              />
           </div>
-          <CircularProgressBar
-            value={notComplied}
-            label="Not Complied"
-            color="#dc3545"
-          />
-        </div>
-        <div>
-          <div className='ps-9 mt-3'>
-            <label>Partially Complied</label>
+          <div className="w-full lg:w-auto flex-1 text-center">
+              <div className='mt-3'>
+                  <label>Partially Complied</label>
+              </div>
+              <CircularProgressBar
+                  value={partiallyComplied}
+                  label="Partially Complied"
+                  color="#ffc107"
+              />
           </div>
-          <CircularProgressBar
-            value={partiallyComplied}
-            label="Partially Complied"
-            color="#ffc107"
-          />
-        </div>
-        <div>
-          <div className='ps-12 mt-3'>
-            <label>Overdue</label>
+          <div className="w-full lg:w-auto flex-1 text-center">
+              <div className='mt-3'>
+                  <label>Overdue</label>
+              </div>
+              <CircularProgressBar
+                  value={overdue}
+                  label="Overdue"
+                  color="#fd7e14"
+              />
           </div>
-          <CircularProgressBar
-            value={overdue}
-            label="Overdue"
-            color="#fd7e14"
-          />
-        </div>
       </div>
-    </div>
+  </div>
+
   );
 };
 

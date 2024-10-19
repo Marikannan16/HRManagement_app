@@ -23,20 +23,20 @@ const CustomLegend = (props) => {
   
 const Graph= ({ chartData, title }) => {
   return (
-    <div className='border mt-5 pe-4 ps-4 pb-4 rounded'>
-      <h5 className='mt-4 ps-2 mb-4'>{title}</h5>
-      <ResponsiveContainer width="90%" height={300}>
-        <LineChart data={chartData}>
-          <XAxis dataKey="name" axisLine={false} tickLine={false} />
-          <YAxis axisLine={false} tickLine={false} />
-          
-          <Legend verticalAlign='top' content={<CustomLegend />} />
-          
-          <Line type="monotone" dataKey="Complied" stroke="#40bf40" strokeWidth={2} dot={false} />
-          <Line type="monotone" dataKey="NotComplied" stroke="#f87171" strokeWidth={2} dot={false} />
-          <Line type="monotone" dataKey="Partially" stroke="#e4ba4e" strokeWidth={2} dot={false} />
-          <Line type="monotone" dataKey="Overdue" stroke="#ff8c00" strokeWidth={2} dot={false} />
-        </LineChart>
+    <div className='border mt-5 p-4 rounded'>
+    <h5 className='mt-4 ps-2 mb-4'>{title}</h5>
+    <ResponsiveContainer width="100%" height={300}>
+      <LineChart data={chartData}>
+        <XAxis dataKey="name" axisLine={false} tickLine={false} />
+        <YAxis axisLine={false} tickLine={false} />
+        
+        <Legend verticalAlign='top' content={<CustomLegend />} />
+        
+        <Line type="monotone" dataKey="Complied" stroke="#40bf40" strokeWidth={2} dot={false} />
+        <Line type="monotone" dataKey="NotComplied" stroke="#f87171" strokeWidth={2} dot={false} />
+        <Line type="monotone" dataKey="Partially" stroke="#e4ba4e" strokeWidth={2} dot={false} />
+        <Line type="monotone" dataKey="Overdue" stroke="#ff8c00" strokeWidth={2} dot={false} />
+      </LineChart>
       </ResponsiveContainer>
     </div>
   );

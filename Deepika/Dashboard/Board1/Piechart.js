@@ -20,12 +20,10 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 
 const Piechart = ({ title, pieData, COLORS }) => {
   return (
-    <div>
-      <div
-        className="bg-white rounded-lg border shadow-lg p-3 -mt-20"
-        style={{ height: '240px', width: '350px', marginLeft: '16rem' }} >
-        <h5>Compliance status</h5>
-        <ResponsiveContainer width="100%" height={200} >
+    <div className="flex flex-col items-center justify-center">
+      <div className="bg-white rounded-lg border p-3 w-11/12 md:w-80 lg:w-96">
+        <h5 className="text-center font-semibold mb-2">{title}</h5>
+        <ResponsiveContainer width="100%" height={200}>
           <PieChart>
             <Pie
               data={pieData}
@@ -33,18 +31,14 @@ const Piechart = ({ title, pieData, COLORS }) => {
               cy="50%"
               labelLine={false}
               label={renderCustomizedLabel}
-              outerRadius={70}
+              outerRadius="70%"
               dataKey="value"
-              isAnimationActive={false} >
+              isAnimationActive={false}>
               {pieData.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
-            <Legend
-              layout="vertical"
-              verticalAlign="middle"
-              align="right"
-            />
+            <Legend layout="vertical" verticalAlign="middle" align="right" />
           </PieChart>
         </ResponsiveContainer>
       </div>

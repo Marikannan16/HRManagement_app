@@ -6,8 +6,8 @@ const CompanyList = ({ totalCompany, state, district, branch }) => {
       <div>
         <h5 className='font-semi bold ps-12 mt-3' >Assigned Clients</h5>
       </div>
-      <div className="grid grid-cols-3 md:grid-cols-4 mt-5 mb-5 ">
-        <div className=" p-5 ms-14  rounded-lg shadow-md w-3/4 h-32 border-l-4 border-l-purple-500 " style={{  backgroundColor: '#e6e6e6', borderColor: '#003366' }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 font-poppins">
+      <div className=" p-5 sm:ms-5 md:ms-14 rounded-lg shadow-md w-full sm:w-3/4 h-auto min-h-[8rem] border-l-4 border-l-purple-500 " style={{  backgroundColor: '#e6e6e6', borderColor: '#003366' }}>
           <div className="flex items-center ">
             <div className="p-1 rounded " style={{ backgroundColor: '#0d3d6e' }}>
               <TbReportAnalytics style={{ color: 'white', fontSize: '30px' }} />
@@ -19,7 +19,7 @@ const CompanyList = ({ totalCompany, state, district, branch }) => {
           </div>
         </div>
 
-        <div className=" p-5 ms-1  rounded-lg shadow-md w-3/4 h-32 border-l-4 " style={{ backgroundColor: '#ffece6', borderColor: '#ff9d80' }}>
+        <div className=" p-5 sm:ms-5 md:ms-14 rounded-lg shadow-md w-full sm:w-3/4 h-auto min-h-[8rem] border-l-4 " style={{ backgroundColor: '#ffece6', borderColor: '#ff9d80' }}>
           <div className="flex items-center">
             <div className="p-1 rounded" style={{ backgroundColor: '#ff9d80' }}>
               <TbReportAnalytics style={{ color: 'white', fontSize: '30px' }} />
@@ -31,7 +31,7 @@ const CompanyList = ({ totalCompany, state, district, branch }) => {
           </div>
         </div>
 
-        <div className=" p-5 rounded-lg -ms-12 shadow-md w-3/4 h-32 border-l-4 " style={{ backgroundColor: '#f4fafd', borderColor: '#00bfff' }}>
+        <div className="p-5 sm:ms-5 md:ms-14 rounded-lg shadow-md w-full sm:w-3/4 h-auto min-h-[8rem] border-l-4 " style={{ backgroundColor: '#f4fafd', borderColor: '#00bfff' }}>
           <div className="flex items-center">
             <div className="p-1  rounded" style={{ backgroundColor: '#00bfff' }}>
               <TbReportAnalytics style={{ color: 'white', fontSize: '30px' }} />
@@ -43,7 +43,7 @@ const CompanyList = ({ totalCompany, state, district, branch }) => {
           </div>
         </div>
 
-        <div className=" p-5 rounded-lg -ms-24 shadow-md w-3/4 h-32 border-l-4 " style={{ backgroundColor: '#c4ede0', borderColor: '#36b089' }}>
+        <div className="p-5 sm:ms-5 md:ms-14 rounded-lg shadow-md w-full sm:w-3/4 h-auto min-h-[8rem] border-l-4 " style={{ backgroundColor: '#c4ede0', borderColor: '#36b089' }}>
           <div className="flex items-center">
             <div className="p-1 rounded" style={{ backgroundColor: '#36b089' }}>
               <TbReportAnalytics style={{ color: 'white', fontSize: '30px' }} />

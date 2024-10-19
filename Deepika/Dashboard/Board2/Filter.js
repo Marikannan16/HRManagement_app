@@ -29,7 +29,7 @@ const Filter = () => {
   };
 
   return (
-    <div className="flex space-x-4 p-4 bg-white-100">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-6 mt-4 mb-4">
       <select className="p-2 border rounded-lg focus:outline-none" value={company} onChange={handleCompanyChange}>
         <option value="">Company</option>
         <option value="Acme Corporation">Acme Corporation</option>
@@ -62,8 +62,8 @@ const Filter = () => {
         <option value="Priority2">Priority 2</option>
       </select>
 
-      <DatePicker block placeholder="Date Range" />    
-      </div>
+      <DatePicker block placeholder="Date Range " />
+    </div>
   );
 };
 

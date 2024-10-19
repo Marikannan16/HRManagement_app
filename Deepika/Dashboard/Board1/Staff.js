@@ -32,7 +32,7 @@ const Staff = () => {
         { name: "Dec", Complied: 75, "NotComplied": 5, Partially: 10, Overdue: 10 },
     ];
     return (
-        <div style={{ width: '95%' }} className='ms-10 font-poppins'>
+        <div style={{ width: '95%' }} className='ms-10  font-poppins'>
             <Drop />
             <Assignedclients
                 totalclients={company.totalclients}

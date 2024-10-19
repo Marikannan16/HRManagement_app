@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 import logo from '../../images/logo.png';
+
 const Tablelist = ({ Dummy, currentPage, totalPages, onPageChange }) => {
     const handlePageClick = (page) => {
         onPageChange(page);
     };
+
     const getPaginationButtons = (currentPage, totalPages) => {
         const paginationButtons = [];
         const maxButtons = 3;
@@ -49,38 +51,38 @@ const Tablelist = ({ Dummy, currentPage, totalPages, onPageChange }) => {
     };
 
     return (
-        <div>
-            <div className='border mt-5 pe-4 ps-4 pb-4 rounded '>
-                <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
-                    <table class="w-full text-sm text-left rtl:text-right text-black">
-                        <thead class="text-xs text-black font-semibold">
-                            <tr className=" bg-gray-300">
-                                <th scope="col" class="px-6 py-3">S.No</th>
-                                <th scope="col" class="px-6 py-3">Date</th>
-                                <th scope="col" class="px-6 py-3">Company Name</th>
-                                <th scope="col" class="px-6 py-3">State</th>
-                                <th scope="col" class="px-6 py-3">Branch</th>
-                                <th scope="col" class="px-6 py-3">Activity</th>
-                                <th scope="col" class="px-6 py-3">Status</th>
+        <div className="border rounded-md p-4 w-full">
+            <div className='mt-1 pe-4 ps-4 pb-4 rounded'>
+                <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
+                    <table className="min-w-full text-sm text-left text-black">
+                        <thead className="text-xs text-black font-semibold">
+                            <tr className="bg-gray-300">
+                                <th scope="col" className="px-4 sm:px-6 py-3">S.No</th>
+                                <th scope="col" className="px-4 sm:px-6 py-3">Date</th>
+                                <th scope="col" className="px-4 sm:px-6 py-3">Company Name</th>
+                                <th scope="col" className="px-4 sm:px-6 py-3">State</th>
+                                <th scope="col" className="px-4 sm:px-6 py-3">Branch</th>
+                                <th scope="col" className="px-4 sm:px-6 py-3">Activity</th>
+                                <th scope="col" className="px-4 sm:px-6 py-3">Status</th>
                             </tr>
                         </thead>
                         <tbody className='me-10'>
                             {Dummy.map((row) => (
                                 <tr key={row.SNO}>
-                                    <td className="px-6 py-1 border-b border-gray-300">{row.SNO}</td>
-                                    <td className="px-2 py-1 border-b border-gray-300">{row.Date}</td>
-                                    <td className="px-2 py-1 border-b border-gray-300">
+                                    <td className="px-2 sm:px-4 py-1 border-b border-gray-300">{row.SNO}</td>
+                                    <td className="px-2 sm:px-4 py-1 border-b border-gray-300">{row.Date}</td>
+                                    <td className="px-2 sm:px-4 py-1 border-b border-gray-300">
                                         <div className='inline-flex'>
                                             <img src={logo} alt='' width="30" className='mr-2 mt-2 rounded-full' />
                                             <span className='mt-3'>{row.CompanyName}</span>
                                         </div>
                                     </td>
-                                    <td className="px-2 py-1 border-b border-gray-300">{row.State}</td>
-                                    <td className="px-2 py-1 border-b border-gray-300">{row.Branch}</td>
-                                    <td className="px-2 py-1 border-b border-gray-300">{row.Activity}</td>
-                                    <td className="px-2 py-1 border-b border-gray-300">
+                                    <td className="px-2 sm:px-4 py-1 border-b border-gray-300">{row.State}</td>
+                                    <td className="px-2 sm:px-4 py-1 border-b border-gray-300">{row.Branch}</td>
+                                    <td className="px-2 sm:px-4 py-1 border-b border-gray-300">{row.Activity}</td>
+                                    <td className="px-2 sm:px-4 py-1 border-b border-gray-300">
                                         <span className={`px-2 py-1 flex items-center justify-center w-32 h-8 text-sm font-semibold leading-tight rounded-full 
-                                            ${row.Status === 'Not Complied' ? 'bg-red-400' : row.Status === 'Partially Complied' ? 'bg-amber-500 ps-7' : row.Status === 'Complied' ? 'bg-green-400' : 'bg-gray-200'}`}>{row.Status}
+                                    ${row.Status === 'Not Complied' ? 'bg-red-400' : row.Status === 'Partially Complied' ? 'bg-amber-500 ps-7' : row.Status === 'Complied' ? 'bg-green-400' : 'bg-gray-200'}`}>{row.Status}
                                         </span>
                                     </td>
                                 </tr>
@@ -88,11 +90,20 @@ const Tablelist = ({ Dummy, currentPage, totalPages, onPageChange }) => {
                         </tbody>
                     </table>
                 </div>
-                <div className="flex items-center justify-between mt-4">
-                    <div className="bg-white border border-gray-300 rounded-md px-4 py-2">
-                        <span>
-                            Page {currentPage} of {totalPages}
-                        </span>
+                <div className="flex items-center justify-between mt-4 flex-wrap">
+                    <div className="bg-white border border-gray-300 rounded-md px-4 py-2 mb-2">
+                        <label htmlFor="page-select" className="mr-2 text-sm"> Page</label>
+                        <select 
+                            id="page-select" 
+                            value={currentPage} 
+                            onChange={(e) => handlePageClick(Number(e.target.value))}
+                            className="border border-gray-300 rounded-md p-1"
+                        >
+                            {Array.from({ length: totalPages }, (_, index) => (
+                                <option key={index} value={index + 1}>{index + 1}</option>
+                            ))}
+                        </select>
+                        <span className="ml-2 text-sm">of {totalPages}</span>
                     </div>
 
                     <div className="flex items-center space-x-2">
@@ -135,6 +146,7 @@ const Tablelist = ({ Dummy, currentPage, totalPages, onPageChange }) => {
                 </div>
             </div>
         </div>
-    )
+    );
 }
-export default Tablelist
+
+export default Tablelist;

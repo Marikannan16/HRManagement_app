@@ -7,8 +7,8 @@ const Assignedclients = ({ totalclients, state, district, branch }) => {
         <div>
           <h5 className='font-semi bold ps-12 mt-3' >Assigned Clients</h5>
         </div>
-        <div className="grid grid-cols-3 md:grid-cols-4 mt-5 mb-5 font-poppins font-ExtraLight  200">
-          <div className=" p-5 ms-14  rounded-lg shadow-md w-3/4 h-32 border-l-4 border-l-purple-500 " style={{ backgroundColor: '#eeeef7', borderColor: '#0000cc' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 font-poppins">
+          <div className="p-5 sm:ms-5 md:ms-14 rounded-lg shadow-md w-full sm:w-3/4 h-auto min-h-[8rem] border-l-4 border-l-purple-500" style={{ backgroundColor: '#eeeef7', borderColor: '#0000cc' }}>
             <div className="flex items-center ">
               <div className="p-1 rounded " style={{ backgroundColor: '#0000cc' }}>
                 <TbReportAnalytics style={{ color: 'white', fontSize: '30px' }} />
@@ -20,9 +20,9 @@ const Assignedclients = ({ totalclients, state, district, branch }) => {
             </div>
           </div>
 
-          <div className=" p-5 ms-1  rounded-lg shadow-md w-3/4 h-32 border-l-4 " style={{ backgroundColor: '#c1f0c1', borderColor: '#46d246' }}>
+          <div className="p-5 sm:ms-5 md:ms-14 rounded-lg shadow-md w-full sm:w-3/4 h-auto min-h-[8rem] border-l-4" style={{ backgroundColor: '#c1f0c1', borderColor: '#46d246' }}>
             <div className="flex items-center" >
-              <div className="p-1 rounded " style={{ backgroundColor: '#46d246', backgroundImage: `url('../../images/BLUE.png')` }}>
+              <div className="p-1 rounded " style={{ backgroundColor: '#46d246' }}>
                 <TbReportAnalytics style={{ color: 'white', fontSize: '30px' }} />
               </div>
               <div className="ms-5 ps-2">
@@ -32,8 +32,8 @@ const Assignedclients = ({ totalclients, state, district, branch }) => {
             </div>
           </div>
 
-          <div className=" p-5 rounded-lg -ms-12 shadow-md w-3/4 h-32 border-l-4 " style={{ backgroundColor: '#ffece6', borderColor: '#ff9d80' }}>
-            <div className="flex items-center">
+          <div className="p-5 sm:ms-5 md:ms-14 rounded-lg shadow-md w-full sm:w-3/4 h-auto min-h-[8rem] border-l-4" style={{ backgroundColor: '#ffece6', borderColor: '#ff9d80' }}>
+          <div className="flex items-center ">
               <div className="p-1  rounded" style={{ backgroundColor: '#ff9d80' }}>
                 <TbReportAnalytics style={{ color: 'white', fontSize: '30px' }} />
               </div>
@@ -44,7 +44,7 @@ const Assignedclients = ({ totalclients, state, district, branch }) => {
             </div>
           </div>
 
-          <div className=" p-5 rounded-lg -ms-24 shadow-md w-3/4 h-32 border-l-4 " style={{ backgroundColor: 'snow', borderColor: '#e6e600' }}>
+          <div className="p-5 sm:ms-5 md:ms-14 rounded-lg shadow-md w-full sm:w-3/4 h-auto min-h-[8rem] border-l-4" style={{ backgroundColor: 'snow', borderColor: '#e6e600' }}>
             <div className="flex items-center">
               <div className="p-1 rounded" style={{ backgroundColor: '#e6e600' }}>
                 <TbReportAnalytics style={{ color: 'white', fontSize: '30px' }} />
