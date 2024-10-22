@@ -3,7 +3,7 @@ import Drop from './Drop'
 import Assignedclients from './Assignedclients'
 import Clientpriority from './Clientpriority'
 import TableList from './Tablelist'
-import Dummy from './Dummy'
+import data from './Dummy'
 import Circle from './Circle'
 import Curve from './Curve'
 import LineStatus from './LineStatus'
@@ -16,7 +16,12 @@ const Staff = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage, setItemsPerPage] = useState(10);
     const totalPages = 10;
-    
+
+    const [filters, setFilters] = useState({});
+
+    const handleFilterChange = (newFilters) => {
+        setFilters(newFilters);
+    };
     const chartData = [
         { name: "Jan", Complied: 30, "NotComplied": 40, Partially: 20, Overdue: 10 },
         { name: "Feb", Complied: 35, "NotComplied": 30, Partially: 25, Overdue: 10 },
@@ -33,7 +38,7 @@ const Staff = () => {
     ];
     return (
         <div style={{ width: '95%' }} className='ms-10  font-poppins'>
-            <Drop />
+            <Drop onFilterChange={handleFilterChange} />
             <Assignedclients
                 totalclients={company.totalclients}
                 state={company.state}
@@ -45,17 +50,18 @@ const Staff = () => {
                 medium={company1.medium}
                 high={company1.high}
             />
-             <div className="p-4 ">
+            <div className="p-4 ">
                 <TableList
-                    Dummy={Dummy}
+                    Dummy={data}
                     currentPage={currentPage}
                     totalPages={totalPages}
                     onPageChange={setCurrentPage}
                     itemsPerPage={itemsPerPage}
                     onItemsPerPageChange={setItemsPerPage}
+                    filters={filters}
                 />
             </div>
-           
+
             <Circle {...complianceData} />
             <Curve
                 chartData={chartData}

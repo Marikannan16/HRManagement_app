@@ -94,14 +94,9 @@ const LineStatus = ({ companies, currentPage, totalPages, onPageChange }) => {
                     </table>
                 </div>
                 <div className="flex items-center justify-between mt-4 flex-wrap">
-                    <div className="bg-white border border-gray-300 rounded-md px-4 py-2 mb-2">
+                    <div className="bg-white  px-4 py-2 mb-2">
                         <label htmlFor="page-select" className="mr-2 text-sm"> Page</label>
-                        <select 
-                            id="page-select" 
-                            value={currentPage} 
-                            onChange={(e) => handlePageClick(Number(e.target.value))}
-                            className="border border-gray-300 rounded-md p-1"
-                        >
+                        <select id="page-select" value={currentPage} onChange={(e) => handlePageClick(Number(e.target.value))} className="border border-gray-300 rounded-md p-1">
                             {Array.from({ length: totalPages }, (_, index) => (
                                 <option key={index} value={index + 1}>{index + 1}</option>
                             ))}

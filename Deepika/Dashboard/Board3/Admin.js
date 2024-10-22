@@ -15,6 +15,12 @@ const Index = () => {
     const [itemsPerPage, setItemsPerPage] = useState(10);
     const totalPages = 10;
 
+    const [filters, setFilters] = useState({});
+
+    const handleFilterChange = (newFilters) => {
+        setFilters(newFilters);
+    };
+
     const chartData = [
         { name: "Jan", Complied: 30, "NotComplied": 40, Partially: 20, Overdue: 10 },
         { name: "Feb", Complied: 35, "NotComplied": 30, Partially: 25, Overdue: 10 },
@@ -32,7 +38,7 @@ const Index = () => {
 
     return (
         <div style={{ width: '95%' }} className='ms-10 font-poppins'>
-            <Dropdown />
+            <Dropdown onFilterChange={handleFilterChange} />
             <ClientList
                 totalCompany={company.totalCompany}
                 state={company.state}
@@ -48,6 +54,7 @@ const Index = () => {
                     onPageChange={setCurrentPage}
                     itemsPerPage={itemsPerPage}
                     onItemsPerPageChange={setItemsPerPage}
+                    filters={filters}
                 />
             </div>
             <MultiSeries

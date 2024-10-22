@@ -5,7 +5,7 @@ import Table from './Table';
 import companies from './companies';
 import Graph from './Graph';
 import Activity from './Activity';
-import  activities  from './ActivityData';
+import activities from './ActivityData';
 import Filter from './Filter'
 const Client = () => {
     const company = { totalCompany: 1, state: 43, district: 27, branch: 7 };
@@ -14,6 +14,12 @@ const Client = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage, setItemsPerPage] = useState(10);
     const totalPages = 10;
+
+    const [filters, setFilters] = useState({});
+
+    const handleFilterChange = (newFilters) => {
+        setFilters(newFilters);
+    };
 
     const chartData = [
         { name: "Jan", Complied: 30, "NotComplied": 40, Partially: 20, Overdue: 10 },
@@ -29,15 +35,15 @@ const Client = () => {
         { name: "Nov", Complied: 70, "NotComplied": 5, Partially: 15, Overdue: 10 },
         { name: "Dec", Complied: 75, "NotComplied": 5, Partially: 10, Overdue: 10 },
     ];
-     
+
     return (
-        <div style={{width:'95%'}} className='ms-10 font-poppins'>
-            <Filter />
+        <div style={{ width: '95%' }} className='ms-10 font-poppins'>
+            <Filter onFilterChange={handleFilterChange} />
             <CompanyList
                 totalCompany={company.totalCompany}
                 state={company.state}
                 district={company.district}
-                branch={company.branch}/>
+                branch={company.branch} />
 
             <Status {...complianceData} />
 
@@ -53,9 +59,11 @@ const Client = () => {
             </div>
             <Graph
                 chartData={chartData}
-                title="Compliance Status for the period April 2024 to August 2024"/>
+                title="Compliance Status for the period April 2024 to August 2024" />
             <div>
-            <Activity activities={activities}/>
+                <Activity activities={activities}
+                filters={filters}
+                />
             </div>
 
         </div>

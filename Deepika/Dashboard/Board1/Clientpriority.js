@@ -17,7 +17,7 @@ const Clientpriority = ({ low, medium, high }) => {
             <div className="flex flex-col md:flex-row gap-8">
                 <div className='border rounded p-5  md:w-5/6 lg:w-4/5 xl:w-4/5'>
                     <h5 className='font-semibold  mt-3 mb-5'>Client Priority</h5>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ps-12">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ">
                         <div className="p-5 rounded-lg  h-32 border-l-4" style={{ backgroundColor: '#c4ede0', borderColor: '#36b089' }}>
                             <div className="flex items-center">
                                 <div className="p-1 rounded" style={{ backgroundColor: '#36b089' }}>
@@ -35,7 +35,7 @@ const Clientpriority = ({ low, medium, high }) => {
                                 <div className="p-1 rounded" style={{ backgroundColor: '#0d3d6e' }}>
                                     <TbReportAnalytics style={{ color: 'white', fontSize: '30px' }} />
                                 </div>
-                                <div className="ms-5 ps-2">
+                                <div className="ms-2 ps-2">
                                     <h5>Medium</h5>
                                     <p className="text-xl font-semibold">{medium}</p>
                                 </div>
@@ -56,9 +56,8 @@ const Clientpriority = ({ low, medium, high }) => {
                     </div>
                 </div>
 
-                <div className="flex-grow">
+                <div className="border rounded">
                     <Piechart
-                        title="Compliance Status"
                         pieData={data}
                         COLORS={colors}
                     />
