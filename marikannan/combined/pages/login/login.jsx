@@ -34,7 +34,6 @@ const Login = () => {
           <img
             src={logo}
             className="mx-auto mt-5"
-            style={{ height: "90px", height: "90px" }}
           />
           <br />
           <div className="max-w-sm mx-auto">
