@@ -37,7 +37,7 @@ const Client = () => {
     ];
 
     return (
-        <div style={{ width: '95%' }} className='ms-10 font-poppins'>
+        <div  className='p-5 font-poppins'>
             <Filter onFilterChange={handleFilterChange} />
             <CompanyList
                 totalCompany={company.totalCompany}
@@ -47,7 +47,7 @@ const Client = () => {
 
             <Status {...complianceData} />
 
-            <div className="p-4 ">
+            <div className="py-4 ">
                 <Table
                     companies={companies}
                     currentPage={currentPage}

@@ -13,7 +13,7 @@ const Circle = ({ complied, notComplied, partiallyComplied, overdue }) => {
               <CircularProgressBar
                   value={complied}
                   label="Complied"
-                  color="#28a745"
+                  color="#28a745" 
               />
           </div>
           <div className="w-full lg:w-auto flex-1 text-center">

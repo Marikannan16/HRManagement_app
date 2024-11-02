@@ -37,7 +37,7 @@ const Index = () => {
     ];
 
     return (
-        <div style={{ width: '95%' }} className='ms-10 font-poppins'>
+        <div className='p-5 font-poppins'>
             <Dropdown onFilterChange={handleFilterChange} />
             <ClientList
                 totalCompany={company.totalCompany}
@@ -46,7 +46,7 @@ const Index = () => {
                 branch={company.branch} />
             <Progress {...complianceData} />
 
-            <div className="p-4">
+            <div className="py-4">
                 <Table
                     companies={companies}
                     currentPage={currentPage}

@@ -17,6 +17,10 @@ const Staff = () => {
     const [itemsPerPage, setItemsPerPage] = useState(10);
     const totalPages = 10;
 
+    const [current, setCurrent] = useState(1);
+    const [itemsPage, setItemsPage] = useState(10);
+    const total = 10;
+
     const [filters, setFilters] = useState({});
 
     const handleFilterChange = (newFilters) => {
@@ -37,7 +41,7 @@ const Staff = () => {
         { name: "Dec", Complied: 75, "NotComplied": 5, Partially: 10, Overdue: 10 },
     ];
     return (
-        <div style={{ width: '95%' }} className='ms-10  font-poppins'>
+        <div  className='p-5  font-poppins'>
             <Drop onFilterChange={handleFilterChange} />
             <Assignedclients
                 totalclients={company.totalclients}
@@ -50,7 +54,7 @@ const Staff = () => {
                 medium={company1.medium}
                 high={company1.high}
             />
-            <div className="p-4 ">
+            <div className="py-4">
                 <TableList
                     Dummy={data}
                     currentPage={currentPage}
@@ -69,11 +73,11 @@ const Staff = () => {
             />
             <LineStatus
                 companies={companies}
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={setCurrentPage}
-                itemsPerPage={itemsPerPage}
-                onItemsPerPageChange={setItemsPerPage}
+                current={current}
+                total={total}
+                onPageChange={setCurrent}
+                itemsPage={itemsPage}
+                onItemsPerPageChange={setItemsPage}
             />
         </div>
     )
