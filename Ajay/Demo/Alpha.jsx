@@ -17,7 +17,7 @@ function Alpha() {
         Open Modal
       </button>
       
-      <Demo isOpen={isOpen} onClose={toggleModal} title="My Modal">
+      <Demo isOpen={isOpen} onClose={toggleModal}>
         <p>This is the content of the modal!</p>
       </Demo>
     </div>
