@@ -65,12 +65,7 @@ const Drop = ({ onFilterChange }) => {
         <option value="Priority2">Priority 2</option>
       </select>
 
-      <DatePicker
-        block
-        placeholder="Date Range"
-        format="dd-MM-yyyy"
-        onChange={(value) => handleFilterChange('date', value)} 
-      />
+      <DatePicker block placeholder="Date Range" format="dd-MM-yyyy" onChange={(value) => handleFilterChange('date', value)} />
     </div>
   );
 };

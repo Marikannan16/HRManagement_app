@@ -37,7 +37,7 @@ const Client = () => {
     ];
 
     return (
-        <div  className='p-5 font-poppins'>
+        <div  className='p-5'>
             <Filter onFilterChange={handleFilterChange} />
             <CompanyList
                 totalCompany={company.totalCompany}
