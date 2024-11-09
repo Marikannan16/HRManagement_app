@@ -17,10 +17,8 @@ const September = ({ time, message, status }) => {
     setDropdownOpen(prev => !prev);
   };
   return (
-
-    
-<div className="flex justify-between items-start lg:items-center p-5">
-      <div className="flex items-start gap-2"> 
+    <div className="flex justify-between items-start lg:items-center p-5">
+      <div className="flex items-start gap-2">
         <span className='flex items-start lg:items-center justify-center gap-2'>
           <input type="checkbox" className="text-black font-semi-bold" />
           <p className="text-sm text-black w-10 lg:w-40">{time}</p>
@@ -62,7 +60,7 @@ const September = ({ time, message, status }) => {
           </div>
         )}
       </div>
-    </div> 
+    </div>
   );
 };
 
