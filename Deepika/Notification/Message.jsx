@@ -25,7 +25,7 @@ const Message = () => {
                     const endOfDay = moment(startDate[1]).endOf('day');
 
                     matchesDate = itemDate.isBetween(startOfDay, endOfDay, null, '[]');
-                } else if (startDate.length === 1) {
+                } else if (startDate.length === 2) {
                     const selectedDate = moment(startDate[0]).startOf('day');
                     matchesDate = itemDate.isSame(selectedDate, 'day');
                 }
