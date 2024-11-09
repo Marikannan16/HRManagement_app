@@ -93,7 +93,7 @@ const Search = ({ searchTerm, setSearchTerm, startDate, setStartDate }) => {
                 onChange: (selectedDates) => {
                     setStartDate(selectedDates.length === 2 ? selectedDates : null); 
                 },
-                allowInput: true, 
+                // allowInput: true, 
             });
         }
     }, [startDate, setStartDate]);
@@ -127,7 +127,7 @@ const Search = ({ searchTerm, setSearchTerm, startDate, setStartDate }) => {
                     value={formattedDateRange}
                     placeholder="Date Range"
                     className="w-full border-none focus:outline-none"
-                    readOnly  
+                    // readOnly  
                 />
                 <RiCalendar2Line
                     className={`absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer ${startDate && startDate.length === 1 ? 'text-gray-400' : ''}`}
