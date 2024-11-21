@@ -1,4 +1,4 @@
- export const data = [
+export const data = [
     {
       time: 'Sep 10, 01:34 PM',
       message: 'Warning: The trade License has passed its due date. Please ensure compliance is completed at the earliest.',
